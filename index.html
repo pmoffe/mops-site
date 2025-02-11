@@ -39,6 +39,9 @@
         .typing-container {
             display: inline-flex;
             align-items: center;
+            max-width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
         }
         .cursor {
             display: inline-block;
@@ -58,6 +61,14 @@
         }
         h1 i {
             margin-right: 12px;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            .cursor {
+                width: 7px;
+            }
         }
         @keyframes typing {
             from { width: 0; }
