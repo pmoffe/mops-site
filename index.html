@@ -32,6 +32,18 @@
             line-height: 1.6;
             text-align: left;
         }
+        .typing-container {
+            display: inline-flex;
+            align-items: center;
+        }
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 1.2em;
+            background-color: var(--text-color);
+            margin-left: 5px;
+            animation: blink 0.7s infinite;
+        }
         h1 {
             font-size: 2.5em;
             margin-bottom: 0.5em;
@@ -39,9 +51,6 @@
             align-items: center;
             white-space: nowrap;
             overflow: hidden;
-            border-right: 2px solid var(--text-color);
-            width: 0;
-            animation: typing 3s steps(20, end) forwards, blink 0.7s infinite;
         }
         h1 i {
             margin-right: 12px;
@@ -51,7 +60,7 @@
             to { width: 100%; }
         }
         @keyframes blink {
-            50% { border-color: transparent; }
+            50% { opacity: 0; }
         }
         p, h2, ul li, a {
             color: var(--text-color);
@@ -116,10 +125,30 @@
                 content.style.display = 'block';
             }
         }
+        document.addEventListener("DOMContentLoaded", function() {
+            const text = "ModernOps Solutions";
+            const textElement = document.getElementById("text");
+            let index = 0;
+
+            function typeText() {
+                if (index < text.length) {
+                    textElement.innerHTML += text.charAt(index);
+                    index++;
+                    setTimeout(typeText, 100);
+                }
+            }
+            typeText();
+        });
     </script>
 </head>
 <body>
-    <h1><i class="ph-bold ph-terminal"></i> ModernOps Solutions</h1>
+    <h1>
+        <i class="ph-bold ph-terminal"></i> 
+        <span class="typing-container">
+            <span id="text"></span>
+            <span class="cursor"></span>
+        </span>
+    </h1>
     <p class="terminal">Your Boutique Technology Integrator for Reliable, High-Performance, Innovative Solutions</p>
 
     <div class="section">
