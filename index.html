@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ModernOps Solutions</title>
+    <title>ModernOps</title>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;700&display=swap');
         :root {
             --bg-color: #fff;
             --text-color: #000;
-            --border-color: #ccc;
-            --box-shadow-color: rgba(0, 0, 0, 0.2);
+            --border-color: #ddd;
+            --box-shadow-color: rgba(0, 0, 0, 0.1);
+            --footer-color: #888;
+            --logo-filter: invert(0);
         }
         @media (prefers-color-scheme: dark) {
             :root {
@@ -19,6 +21,8 @@
                 --text-color: #f5f5f5;
                 --border-color: #444;
                 --box-shadow-color: rgba(255, 255, 255, 0.2);
+                --footer-color: #bbb;
+                --logo-filter: invert(1);
             }
         }
         body {
@@ -72,12 +76,12 @@
             text-decoration: underline;
         }
         .logo {
-            text-align: left;
+            text-align: center;
             margin-top: 40px;
         }
         .logo img {
             max-width: 100px;
-            filter: invert(1);
+            filter: var(--logo-filter);
         }
         .terminal {
             font-size: 1.2em;
@@ -113,6 +117,13 @@
             display: none;
             margin-top: 5px;
             font-size: 1em;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 10px;
+            color: var(--footer-color);
+            font-size: 0.9em;
         }
     </style>
     <script>
@@ -158,17 +169,12 @@
 
     <div class="section">
         <h2><i class="ph-bold ph-strategy"></i> Our Approach</h2>
-        <p>At ModernOps Solutions, we do more than just sell hardware and software solutions; we become your strategic IT partner. Our approach is straightforward: we want you to purchase our curated hardware and software solutions and then sign up for our comprehensive IT services to manage what you just bought. Unlike typical Value-Added Resellers (VARs) with managed services organizations, our Managed Services are not an afterthought—they are at the core of our business.</p>
+        <p>We do more than just sell hardware and software solutions; we become your strategic IT partner. Our approach is straightforward: we want you to purchase our curated hardware and software solutions and then sign up for our comprehensive IT services to manage what you just bought. Unlike typical Value-Added Resellers (VARs) with managed services organizations, our Managed Services are not an afterthought — they are at the core of our business.</p>
     </div>
 
 	<div class="section">
         <h2><i class="ph-bold ph-users"></i> Integrated Teams</h2>
-        <p>Our managed services seamlessly integrate with our pre- and post-sales teams, ensuring smooth transitions, comprehensive documentation, and well-coordinated handoffs. Unlike other MSPs, we do not incentivize our post-sales team to rush installations. We focus on thorough, meticulous setups that are complete, correctly configured, and fully tested before transitioning to managed services, guaranteeing reliable and optimized IT solutions from day one.</p>
-    </div>
-    
-    <div class="section">
-        <h2><i class="ph-bold ph-handshake"></i> Collaborative Process</h2>
-        <p>Our Managed Services team collaborates closely with our post-install team at every stage, ensuring smooth transitions and high-quality outcomes. This continuous collaboration guarantees your IT infrastructure is built with precision and maintained with excellence.</p>
+        <p>Our Managed Services seamlessly integrate with our pre- and post-sales teams, ensuring smooth transitions, comprehensive documentation, and well-coordinated handoffs. Unlike other MSPs, we do not incentivize our post-sales team to rush installations. We focus on thorough, meticulous setups that are complete, correctly configured, and fully tested before transitioning to our Managed Services team - guaranteeing reliable and optimized IT solutions from day one.</p>
     </div>
 
     <div class="section">
@@ -219,7 +225,7 @@
 		            <i class="ph-bold ph-wrench"></i> Managed Services
 		        </span>
 		        <p id="managed-services" class="expandable-content">
-		        	Comprehensive solutions that integrate and manage server infrastructure, storage, networking, virtualization, and data protection, providing end-to-end support.
+		        	Comprehensive solutions that integrate and manage server, storage, networking, virtualization, and data protection infrastructure, providing end-to-end support.
 		        </p>
             </li>
         </ul>
@@ -228,13 +234,17 @@
     <div class="contact">
         <h2><i class="ph-bold ph-address-book"></i> Contact Us</h2>
         <p><i class="ph-bold ph-phone"></i> Sales: <a href="tel:4844299328">484-429-9328</a></p>
-        <p><i class="ph-bold ph-phone"></i> Support: <a href="tel:2156105007">215-610-5007</a></p>
+        <p><i class="ph-bold ph-phone"></i> Support: <a href="tel:2156105007">215-610-5007</a> or <a href="https://support.modernops.com">open a ticket</p>
         <p><i class="ph-bold ph-envelope"></i> Email: <a href="mailto:sales@modernops.com">sales@modernops.com</a></p>
         <p><i class="ph-bold ph-map-pin"></i> Address: <a href="https://www.google.com/maps/place/1+Fayette+St,+Conshohocken,+PA+19428/@40.0729595,-75.3089882,17z/data=!3m1!4b1!4m6!3m5!1s0x89c6bfc4cd91e865:0x6ca267fc42ffb590!8m2!3d40.0729595!4d-75.3064133!16s%2Fg%2F11vsd6ycv3?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D">1 Fayette Street, Suite 220, Conshohocken, PA 19428</a></p>
     </div>
 
     <div class="logo">
         <img src="https://modernops.com/wp-content/uploads/2024/07/ModernOps-Final-logo-01-ai.svg" alt="ModernOps Logo">
+    </div>
+    
+    <div class="footer">
+        &copy; ModernOps, LLC. All Rights Reserved.
     </div>
 </body>
 </html>
