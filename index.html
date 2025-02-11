@@ -109,7 +109,12 @@
     <script>
         function toggleContent(id) {
             var content = document.getElementById(id);
-            content.style.display = content.style.display === 'none' ? 'block' : 'none';
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+            } else {
+                document.querySelectorAll('.expandable-content').forEach(el => el.style.display = 'none');
+                content.style.display = 'block';
+            }
         }
     </script>
 </head>
