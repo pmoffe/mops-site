@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ModernOps Solutions</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;700&display=swap');
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+            background-color: #000;
+            color: #f5f5f5;
+            margin: 0;
+            padding: 40px;
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.6;
+            text-align: left;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid #f5f5f5;
+            width: 0;
+            animation: typing 3s steps(20, end) forwards, blink 0.7s infinite;
+        }
+        h1 i {
+            margin-right: 12px;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+        p {
+            font-size: 1.2em;
+            color: #e0e0e0;
+        }
+        a {
+            color: #f5f5f5;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .logo {
+            text-align: left;
+            margin-top: 40px;
+        }
+        .logo img {
+            max-width: 100px;
+            filter: invert(1);
+        }
+        .terminal {
+            font-size: 1.2em;
+            color: #f5f5f5;
+            background: #222;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            overflow-x: auto;
+            border: 1px solid #f5f5f5;
+        }
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border-top: 2px solid #f5f5f5;
+            background: #111;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+        }
+        .contact {
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 2px solid #f5f5f5;
+            background: #111;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+        }
+        .expandable {
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .expandable-content {
+            display: none;
+            margin-top: 5px;
+            font-size: 1em;
+        }
+    </style>
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            content.style.display = content.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</head>
+<body>
+    <h1><i class="ph-bold ph-terminal"></i> ModernOps Solutions</h1>
+    <p class="terminal">Your Boutique Technology Integrator for Reliable, High-Performance, Innovative Solutions</p>
+
+    <div class="section">
+        <h2><i class="ph-bold ph-lightbulb"></i> About Us</h2>
+        <p>ModernOps builds and manages digital platforms that power the most successful organizations in the world. Our consultative approach, unmatched engineering, and innovative solutions combine to accelerate the impact of technology in every client we serve.</p>
+    </div>
+
+    <div class="section">
+        <h2><i class="ph-bold ph-strategy"></i> Our Approach</h2>
+        <p>At ModernOps Solutions, we do more than just sell hardware and software solutions; we become your strategic IT partner. Our approach is straightforward: we want you to purchase our curated hardware and software solutions and then sign up for our comprehensive IT services to manage what you just bought. Unlike typical Value-Added Resellers (VARs) with managed services organizations, our Managed Services are not an afterthought—they are at the core of our business.</p>
+    </div>
+
+	<div class="section">
+        <h2><i class="ph-bold ph-users"></i> Integrated Teams</h2>
+        <p>Our managed services seamlessly integrate with our pre- and post-sales teams, ensuring smooth transitions, comprehensive documentation, and well-coordinated handoffs. Unlike other MSPs, we do not incentivize our post-sales team to rush installations. We focus on thorough, meticulous setups that are complete, correctly configured, and fully tested before transitioning to managed services, guaranteeing reliable and optimized IT solutions from day one.</p>
+    </div>
+    
+    <div class="section">
+        <h2><i class="ph-bold ph-handshake"></i> Collaborative Process</h2>
+        <p>Our Managed Services team collaborates closely with our post-install team at every stage, ensuring smooth transitions and high-quality outcomes. This continuous collaboration guarantees your IT infrastructure is built with precision and maintained with excellence.</p>
+    </div>
+
+    <div class="section">
+        <h2><i class="ph-bold ph-gear-six"></i> Solutions</h2>
+        <ul>
+        	<li>
+        		<span class="expandable" onclick="toggleContent('server-infrastructure')">
+        			<i class="ph-bold ph-computer-tower"></i> Server Infrastructure
+                </span>
+                <p id="server-infrastructure" class="expandable-content">
+                    The core of IT systems, encompassing both physical and virtual assets, including hardware, software, and network components.
+                </p>
+            </li>
+            <li>
+            	<span class="expandable" onclick="toggleContent('primary-storage')">
+			        <i class="ph-bold ph-database"></i> Primary Storage
+            	</span>
+            	<p id="primary-storage" class="expandable-content">
+            		Assess and optimize your organization's data storage, ensuring you make informed decisions to meet your needs.
+            	</p>
+			</li>
+            <li>
+            	<span class="expandable" onclick="toggleContent('data-center-networking')">
+            		<i class="ph-bold ph-network"></i> Data Center Networking
+            	</span>
+            	<p id="data-center-networking" class="expandable-content">
+            		Facilitates communication and data transfer between servers and critical applications, ensuring seamless operations.
+            	</p>
+            </li>
+            <li>
+            	<span class="expandable" onclick="toggleContent('virtualization-platform')">
+            		<i class="ph-bold ph-cloud"></i> Virtualization Platforms
+            	</span>
+            	<p id="virtualization-platform" class="expandable-content">
+            		Enhance resource efficiency, scalability, and infrastructure management through advanced virtualization technologies.
+            	</p>
+            </li>
+            <li>
+            	<span class="expandable" onclick="toggleContent('data-protection')">
+            		<i class="ph-bold ph-shield"></i> Data Protection & Recovery
+            	</span>
+            	<p id="data-protection" class="expandable-content">
+            		Implement robust strategies to protect sensitive information and recover data in case of a breach or loss.
+            	</p>
+            </li>
+            <li>
+	            <span class="expandable" onclick="toggleContent('managed-services')">
+		            <i class="ph-bold ph-wrench"></i> Managed Services
+		        </span>
+		        <p id="managed-services" class="expandable-content">
+		        	Comprehensive solutions that integrate and manage server infrastructure, storage, networking, virtualization, and data protection, providing end-to-end support.
+		        </p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="contact">
+        <h2><i class="ph-bold ph-address-book"></i> Contact Us</h2>
+        <p><i class="ph-bold ph-phone"></i> Sales: <a href="tel:4844299328">484-429-9328</a></p>
+        <p><i class="ph-bold ph-phone"></i> Support: <a href="tel:2156105007">215-610-5007</a></p>
+        <p><i class="ph-bold ph-envelope"></i> Email: <a href="mailto:sales@modernops.com">sales@modernops.com</a></p>
+        <p><i class="ph-bold ph-map-pin"></i> Address: <a href="https://www.google.com/maps/place/1+Fayette+St,+Conshohocken,+PA+19428/@40.0729595,-75.3089882,17z/data=!3m1!4b1!4m6!3m5!1s0x89c6bfc4cd91e865:0x6ca267fc42ffb590!8m2!3d40.0729595!4d-75.3064133!16s%2Fg%2F11vsd6ycv3?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D">1 Fayette Street, Suite 220, Conshohocken, PA 19428</a></p>
+    </div>
+
+    <div class="logo">
+        <img src="https://modernops.com/wp-content/uploads/2024/07/ModernOps-Final-logo-01-ai.svg" alt="ModernOps Logo">
+    </div>
+</body>
+</html>
