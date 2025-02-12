@@ -147,11 +147,31 @@
         .expandable {
             cursor: pointer;
             font-weight: bold;
+            display: flex;
+            align-items: center;
+            list-style: none;
+            padding: 10px 0;
+        }
+        .expandable i {
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+        .expandable::before {
+            content: '+';
+            font-size: 1.2em;
+            margin-right: 10px;
+            transition: transform 0.2s ease-in-out;
+        }
+        .expandable.open::before {
+            content: '-';
         }
         .expandable-content {
             display: none;
-            margin-top: 5px;
+            margin-left: 30px;
             font-size: 1em;
+        }
+        ul {
+            padding-left: 0;
         }
         .footer {
             text-align: center;
@@ -164,11 +184,15 @@
     <script>
         function toggleContent(id) {
             var content = document.getElementById(id);
+            var trigger = document.querySelector(`[onclick="toggleContent('${id}')"]`);
             if (content.style.display === 'block') {
                 content.style.display = 'none';
+                trigger.classList.remove('open');
             } else {
                 document.querySelectorAll('.expandable-content').forEach(el => el.style.display = 'none');
+                document.querySelectorAll('.expandable').forEach(el => el.classList.remove('open'));
                 content.style.display = 'block';
+                trigger.classList.add('open');
             }
         }
         document.addEventListener("DOMContentLoaded", function() {
@@ -216,54 +240,42 @@
     <div class="section">
         <h2><i class="ph-bold ph-gear-six"></i> Solutions</h2>
         <ul>
-        	<li>
-        		<span class="expandable" onclick="toggleContent('server-infrastructure')">
-        			<i class="ph-bold ph-computer-tower"></i> Server Infrastructure
-                </span>
-                <p id="server-infrastructure" class="expandable-content">
-                    The core of IT systems, encompassing both physical and virtual assets, including hardware, software, and network components.
-                </p>
+        	<li class="expandable" onclick="toggleContent('server-infrastructure')">
+                <i class="ph-bold ph-computer-tower"></i> Server Infrastructure
             </li>
-            <li>
-            	<span class="expandable" onclick="toggleContent('primary-storage')">
-			        <i class="ph-bold ph-database"></i> Primary Storage
-            	</span>
-            	<p id="primary-storage" class="expandable-content">
-            		Assess and optimize your organization's data storage, ensuring you make informed decisions to meet your needs.
-            	</p>
-			</li>
-            <li>
-            	<span class="expandable" onclick="toggleContent('data-center-networking')">
-            		<i class="ph-bold ph-network"></i> Data Center Networking
-            	</span>
-            	<p id="data-center-networking" class="expandable-content">
-            		Facilitates communication and data transfer between servers and critical applications, ensuring seamless operations.
-            	</p>
+            <p id="server-infrastructure" class="expandable-content">
+                The core of IT systems, encompassing both physical and virtual assets, including hardware, software, and network components.
+            </p>
+            <li class="expandable" onclick="toggleContent('primary-storage')">
+                <i class="ph-bold ph-database"></i> Primary Storage
             </li>
-            <li>
-            	<span class="expandable" onclick="toggleContent('virtualization-platform')">
-            		<i class="ph-bold ph-cloud"></i> Virtualization Platforms
-            	</span>
-            	<p id="virtualization-platform" class="expandable-content">
-            		Enhance resource efficiency, scalability, and infrastructure management through advanced virtualization technologies.
-            	</p>
+            <p id="primary-storage" class="expandable-content">
+                Assess and optimize your organization's data storage, ensuring you make informed decisions to meet your needs.
+            </p>
+            <li class="expandable" onclick="toggleContent('data-center-networking')">
+                <i class="ph-bold ph-network"></i> Data Center Networking
             </li>
-            <li>
-            	<span class="expandable" onclick="toggleContent('data-protection')">
-            		<i class="ph-bold ph-shield"></i> Data Protection & Recovery
-            	</span>
-            	<p id="data-protection" class="expandable-content">
-            		Implement robust strategies to protect sensitive information and recover data in case of a breach or loss.
-            	</p>
+            <p id="data-center-networking" class="expandable-content">
+                Facilitates communication and data transfer between servers and critical applications, ensuring seamless operations.
+            </p>
+            <li class="expandable" onclick="toggleContent('virtualization-platform')">
+                <i class="ph-bold ph-cloud"></i> Virtualization Platforms
             </li>
-            <li>
-	            <span class="expandable" onclick="toggleContent('managed-services')">
-		            <i class="ph-bold ph-wrench"></i> Managed Services
-		        </span>
-		        <p id="managed-services" class="expandable-content">
-		        	Comprehensive solutions that integrate and manage server, storage, networking, virtualization, and data protection infrastructure, providing end-to-end support.
-		        </p>
+            <p id="virtualization-platform" class="expandable-content">
+                Enhance resource efficiency, scalability, and infrastructure management through advanced virtualization technologies.
+            </p>
+            <li class="expandable" onclick="toggleContent('data-protection')">
+                <i class="ph-bold ph-shield"></i> Data Protection & Recovery
             </li>
+            <p id="data-protection" class="expandable-content">
+                Implement robust strategies to protect sensitive information and recover data in case of a breach or loss.
+            </p>
+            <li class="expandable" onclick="toggleContent('managed-services')">
+                <i class="ph-bold ph-wrench"></i> Managed Services
+            </li>
+            <p id="managed-services" class="expandable-content">
+                Comprehensive solutions that integrate and manage server, storage, networking, virtualization, and data protection infrastructure, providing end-to-end support.
+            </p>
         </ul>
     </div>
 
