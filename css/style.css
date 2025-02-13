@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;700&display=swap');
 :root {
     --bg-color: #fff;
+    --brightness: brightness(.95);
     --text-color: #000;
-    --border-color: #ddd;
+    --border-color: #eaeaea;
     --box-shadow-color: rgba(0, 0, 0, 0.1);
     --footer-color: #888;
     --logo-filter: invert(0);
@@ -10,6 +11,7 @@
 @media (prefers-color-scheme: dark) {
     :root {
         --bg-color: #000;
+        --brightness: brightness(1.3);
         --text-color: #f5f5f5;
         --border-color: #444;
         --box-shadow-color: rgba(255, 255, 255, 0.2);
@@ -109,8 +111,9 @@ a:hover {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 .section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px var(--box-shadow-color);
+    /*transform: translateY(-5px);
+    box-shadow: 0 4px 15px var(--box-shadow-color);*/
+    filter: var(--brightness);
 }
 .contact {
     margin-top: 40px;
@@ -125,6 +128,7 @@ a:hover {
 .contact:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 15px var(--box-shadow-color);
+    filter: var(--brightness);
 }
 .contact .chat-icon {
     position: absolute;
